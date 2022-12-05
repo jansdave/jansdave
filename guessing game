@@ -1,0 +1,25 @@
+def check_guess(guess, answer):
+    global score
+    still_guessing = True
+    attempt = 0
+    while still_guessing and attempt < 3:
+        if guess.lower() == answer.lower():
+            print("Correct Answer")
+            score = score + 1
+            still_guessing = False
+        else:
+            if attempt < 2:
+                guess = input("Sorry Wrong Answer, try again:")
+            attempt = attempt + 1
+    if attempt == 3:
+        print("The Correct answer is ",answer )
+    
+score = 0
+print("Guess the Gender, Men or Woman")
+guess1 = input("Who drunks Faster?: ")
+check_guess(guess1, "Woman")
+guess2 = input("Who is always good at remembering things?: ")
+check_guess(guess2, "Woman")
+guess3 = input("Who is Always Right? ")
+check_guess(guess3, "'eh ano pa nga ba, edi syempree ikaww>3333'")
+print("Your Score is "+ str(score))
